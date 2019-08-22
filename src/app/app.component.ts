@@ -11,7 +11,13 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
   templateUrl: './app.component.html' 
 })
 export class AppComponent {
+  topbuild = {}
   title = 'renderJasper';
-  pdfSrc: string = 'http://localhost:8080/all';
+  pdfSrc: string = 'http://localhost:8070/all';
   // works with https://vadimdez.github.io/ng2-pdf-viewer/assets/pdf-test.pdf
+
+  onSubmit(order, topBuildForm) {
+    console.log(order);
+    topBuildForm.reset();
+  }
 }

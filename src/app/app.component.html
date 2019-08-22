@@ -1,8 +1,21 @@
-<div>
+<!-- <div>
   <label>PDF src</label>
   <input type="text" placeholder="PDF src" [(ngModel)]="pdfSrc">
+</div> -->
+<div class="container">
+  <form #topBuildForm="ngForm" (ngSubmit)="onSubmit(topbuild.order, topBuildForm)">
+    
+    <div class="form-group">
+      <label for="order">Order Number</label>
+      <input type="number" class="form-control" id="order" required [(ngModel)]="topbuild.order" name="order">
+    </div>
+    
+    <button type="submit" class="btn btn-success" [disabled]="!topBuildForm.form.valid">Request PDF</button>
+    
+  </form>
 </div>
-<pdf-viewer [src]="pdfSrc" 
+
+<pdf-viewer [src]="pdfSrc"
           [render-text]="true"
           style="display: block;">
 </pdf-viewer>
